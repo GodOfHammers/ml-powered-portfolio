@@ -1,0 +1,22 @@
+{
+  "name": "ml-powered-portfolio-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.25.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "graphql": "^15.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
