@@ -16,6 +16,11 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Basic route for the root path
+app.get('/', (req, res) => {
+  res.send('Welcome to the ML-Powered Portfolio API');
+});
+
 // Apollo Server setup
 const server = new ApolloServer({
   typeDefs,
@@ -34,8 +39,12 @@ const server = new ApolloServer({
   },
 });
 
+// Apply Apollo Server middleware
 server.applyMiddleware({ app });
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`GraphQL endpoint available at http://localhost:${PORT}${server.graphqlPath}`);
+});

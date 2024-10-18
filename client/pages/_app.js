@@ -1,17 +1,7 @@
-import '../styles/globals.css';
-import { ApolloProvider } from '@apollo/client';
-import { Provider } from 'react-redux';
-import { store } from '../store';
-import client from '../lib/apollo';
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <ApolloProvider client={client}>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    </ApolloProvider>
-  );
+  return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default MyApp
