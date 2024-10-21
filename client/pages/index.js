@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import CookieExample from '../components/CookieExample';
 
 const TextScramble = ({ text }) => {
   const [scrambledText, setScrambledText] = useState(text)
@@ -102,6 +103,11 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+          
+          {/* Cookie Example Component */}
+          <div className="mt-16">
+            <CookieExample />
           </div>
         </main>
       </div>
