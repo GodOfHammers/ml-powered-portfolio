@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import CookieExample from '../components/CookieExample';
+import HumanVerification from '../components/HumanVerification'
+import CookieExample from '../components/CookieExample'
 
 const TextScramble = ({ text }) => {
   const [scrambledText, setScrambledText] = useState(text)
@@ -26,8 +27,26 @@ const TextScramble = ({ text }) => {
 }
 
 export default function Home() {
+  const [isVerified, setIsVerified] = useState(false);
+  const [showVerification, setShowVerification] = useState(true);
+
+  useEffect(() => {
+    const verified = localStorage.getItem('humanVerified');
+    if (verified === 'true') {
+      setIsVerified(true);
+      setShowVerification(false);
+    }
+  }, []);
+
+  const handleVerified = () => {
+    setIsVerified(true);
+    setShowVerification(false);
+    localStorage.setItem('humanVerified', 'true');
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden font-sans bg-black text-white">
+      {showVerification && <HumanVerification onVerified={handleVerified} />}
       <div 
         className="absolute inset-0 opacity-20"
         style={{
@@ -104,13 +123,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
-          {/* Cookie Example Component */}
-          <div className="mt-16">
-            <CookieExample />
-          </div>
         </main>
       </div>
+      <CookieExample />
     </div>
   )
 }

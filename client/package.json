@@ -11,11 +11,12 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "12.1.5",
-    "next": "^12.3.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "framer-motion": "^6.5.1",
     "js-cookie": "^3.0.1",
-    "nookies": "^2.5.2"
+    "next": "^12.3.4",
+    "nookies": "^2.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",

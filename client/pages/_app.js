@@ -1,13 +1,14 @@
-import App from 'next/app';
+import { useEffect } from 'react';
+import App from 'next/app';  // Add this import
 import { parseCookies } from 'nookies';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps, theme }) {
-  return (
-    <div className={`app ${theme}`}>
-      <Component {...pageProps} />
-    </div>
-  );
+function MyApp({ Component, pageProps, initialTheme }) {
+  useEffect(() => {
+    document.body.className = initialTheme;
+  }, [initialTheme]);
+
+  return <Component {...pageProps} />;
 }
 
 MyApp.getInitialProps = async (appContext) => {
@@ -16,7 +17,7 @@ MyApp.getInitialProps = async (appContext) => {
   
   return { 
     ...appProps, 
-    theme: cookies.theme || 'light'
+    initialTheme: cookies.theme || 'dark'
   };
 };
 
