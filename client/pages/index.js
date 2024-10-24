@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import HumanVerification from '../components/HumanVerification'
-import CookieExample from '../components/CookieExample'
+import CookieConsent from '../components/CookieConsent'
 
 const TextScramble = ({ text }) => {
   const [scrambledText, setScrambledText] = useState(text)
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <CookieExample />
+      <CookieConsent />
     </div>
   )
 }
