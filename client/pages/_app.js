@@ -1,14 +1,22 @@
 import { useEffect } from 'react';
-import App from 'next/app';  // Add this import
+import App from 'next/app';
 import { parseCookies } from 'nookies';
+import CookieConsent from '../components/CookieConsent';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps, initialTheme }) {
+function MyApp({ Component, pageProps, theme }) {
   useEffect(() => {
-    document.body.className = initialTheme;
-  }, [initialTheme]);
+    if (theme) {
+      document.body.className = theme;
+    }
+  }, [theme]);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <CookieConsent />
+    </>
+  );
 }
 
 MyApp.getInitialProps = async (appContext) => {
@@ -17,7 +25,7 @@ MyApp.getInitialProps = async (appContext) => {
   
   return { 
     ...appProps, 
-    initialTheme: cookies.theme || 'dark'
+    theme: cookies.theme || 'dark'
   };
 };
 

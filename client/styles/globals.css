@@ -65,4 +65,23 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: #38b2ac;
 }
 
+/* Add to your existing styles */
+.cookie-consent-enter {
+  transform: translateY(100%);
+}
+
+.cookie-consent-enter-active {
+  transform: translateY(0);
+  transition: transform 300ms ease-in;
+}
+
+.cookie-consent-exit {
+  transform: translateY(0);
+}
+
+.cookie-consent-exit-active {
+  transform: translateY(100%);
+  transition: transform 300ms ease-in;
+}
+
 /* Add any other global styles you need */
