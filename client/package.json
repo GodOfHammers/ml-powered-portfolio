@@ -17,6 +17,7 @@
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
+    "date-fns": "^2.30.0",
     "express-rate-limit": "^7.4.1",
     "framer-motion": "^6.5.1",
     "helmet": "^8.0.0",
@@ -27,7 +28,9 @@
     "nookies": "^2.5.2",
     "rate-limiter-flexible": "^5.0.4",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.13.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
