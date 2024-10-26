@@ -64,21 +64,19 @@ export default function Home() {
 
         <header className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-teal-400 font-pixel">SP</Link>
+            <Link href="/" className="text-2xl font-bold text-teal-400">SP</Link>
             <nav className="hidden md:flex space-x-6">
-              {['Home', 'About', 'Portfolio', 'Contact'].map((item) => (
-                <Link 
-                  key={item} 
-                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                  className="text-teal-400 hover:text-teal-300 transition-colors duration-300"
-                >
-                  {item}
-                </Link>
-              ))}
+              <Link href="/" className="text-teal-400 hover:text-teal-300 transition-colors duration-300">Home</Link>
+              <Link href="/about" className="text-teal-400 hover:text-teal-300 transition-colors duration-300">About</Link>
+              <Link href="/portfolio" className="text-teal-400 hover:text-teal-300 transition-colors duration-300">Portfolio</Link>
+              <Link href="/evolve-or-die" className="bg-teal-500 text-black px-4 py-2 rounded-full hover:bg-teal-400 transition-colors duration-300">Play Game</Link>
+              <Link href="/contact" className="text-teal-400 hover:text-teal-300 transition-colors duration-300">Contact</Link>
             </nav>
             <div className="flex items-center">
               <span className="mr-2">📧</span>
-              <a href="mailto:polis.srikanth@gmail.com" className="text-teal-400 hover:text-teal-300 transition-colors duration-300">polis.srikanth@gmail.com</a>
+              <a href="mailto:polis.srikanth@gmail.com" className="text-teal-400 hover:text-teal-300 transition-colors duration-300">
+                polis.srikanth@gmail.com
+              </a>
             </div>
           </div>
         </header>

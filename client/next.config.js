@@ -1,3 +1,6 @@
+/** @type {import('next').NextConfig} */
+
+// Security headers configuration
 const securityHeaders = [
   {
     key: 'Strict-Transport-Security',
@@ -21,7 +24,18 @@ const securityHeaders = [
   }
 ];
 
-module.exports = {
+const nextConfig = {
+  reactStrictMode: true,
+  
+  // Image configuration
+  images: {
+    domains: ['localhost'],
+  },
+  
+  // Security configurations
+  poweredByHeader: false,
+  
+  // Headers configuration
   async headers() {
     return [
       {
@@ -30,6 +44,9 @@ module.exports = {
       },
     ];
   },
-  poweredBy: false,
-  output: 'export',
+  
+  // Output configuration
+  output: 'standalone'
 };
+
+module.exports = nextConfig;
